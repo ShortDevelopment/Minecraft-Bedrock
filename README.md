@@ -1,6 +1,8 @@
 # Introduction
 With this repository I want to show what is possible in Minecraft Bedrock and that the limits are much lower than many think.<br/>
 Sometimes it is just tricky!<br/>
+<br/>
+If you have <i>any questions</i> about how things work feel free to ask through <a href="https://github.com/ShortDevelopment/Minecraft-Bedrock/issues">Issues</a>.
 ## What you'll find here
 I want to upload information about the offical <a href="https://minecraft.gamepedia.com/Bedrock_Dedicated_Server">bedrock dedicated server</a> and what is posible using this tool.<br/>
 I also want to share my learnings about addons for Bedrock.<br/>
