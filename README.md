@@ -8,6 +8,8 @@ Have fun!
 # Bedrock Dedicated Server
 You can <a href="https://www.minecraft.net/en-us/download/server/bedrock/">download</a> the offical server for the bedrock edition <a href="https://www.minecraft.net/en-us/download/server/bedrock/">here</a>! Remember that the bedrock dedicated server is still in alpha so be carefull and make backups as often as you can!<br/>
 You'll find a really good article about how to setup the server with scripting and addons <a href="https://github.com/perrochon/simple-bedrock-script/blob/master/README.md">here</a>.<br/>
+<br/>
+To get statet with server scripting you should have a look at <a href="Server/Scripting/FirstScript.js">Server/Scripting/FirstScript.js</a>!
 
 # Addons
 You can just go to the <a href="https://minecraft.gamepedia.com/Add-on">offical wiki page</a> about addons. I'll tell you what I have learned soon.<br/>
