@@ -1,0 +1,9 @@
+[
+  { "rawtext": [ { "text": "§4hallo!" } ] },
+  { "rawtext": [ { "score": { "name": "@p", "objective": "mc_test" } } ] },
+  { "rawtext": [ { "selector": "*" } ] },
+  { "rawtext": [ { "selector": "@p" } ] },
+  { "rawtext": [ { "translate": "commands.op.success" } ] },
+  { "rawtext": [ { "translate": "commands.op.success", "with":  { "rawtext": [ { "translate": "item.apple.name" } ] } } ] },
+  { "rawtext": [ { "translate": "commands.op.success", "with":  { "rawtext": [ { "selector": "*" } ] } } ] }
+]
