@@ -1,0 +1,35 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "§rVon §aLukas Kurz§r (§bShortDevelopment§r)",
+    "name": "§5X§r-§6Ray",
+    "uuid": "371bf0fc-b0b3-428c-ba3a-7128594ac2e3",
+    "version": [ 0, 0, 1 ],
+    "min_engine_version": [ 1, 13, 0 ]
+  },
+  "modules": [
+    {
+      "description": "§5X§r-§6Ray",
+      "type": "resources",
+      "uuid": "45b9175c-2d1f-44ee-81cc-c0053ed7be2e",
+      "version": [ 0, 0, 1 ]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "disabled",
+      "name": "§cDeaktiviert",
+      "memory_tier": 0
+    },
+    {
+      "folder_name": "enabled",
+      "name": "§aAktiviert§r (Form der Blöcke verändert)",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "ultra",
+      "name": "§bUltra§r (Totale Transparenz)",
+      "memory_tier": -1
+    }
+  ]
+}

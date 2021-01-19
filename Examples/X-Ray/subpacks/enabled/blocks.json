@@ -1,0 +1,7 @@
+{
+  "stone": {
+    "sound": "stone",
+    "textures": "stone",
+    "blockshape": "sea_pickle"
+  }
+}
