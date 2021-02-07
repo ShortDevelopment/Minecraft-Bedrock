@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "ExplodingSnowball",
+    "name": "ExplodingSnowball",
+    "uuid": "00cb0f3a-ee42-4446-aa6f-91f409773be4",
+    "version": [ 1, 0, 0 ],
+    "min_engine_version": [ 1, 16, 0 ]
+  },
+  "modules": [
+    {
+      "description": "ExplodingSnowball",
+      "type": "data",
+      "uuid": "d54067a1-6792-42ed-adbf-54602e38127d",
+      "version": [ 0, 0, 1 ]
+    }
+  ]
+}
