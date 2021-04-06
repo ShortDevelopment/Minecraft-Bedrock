@@ -1,8 +1,8 @@
 {
   "format_version": 2,
   "header": {
-    "description": "TimeLaps Record Resources",
-    "name": "TimeLaps Record",
+    "description": "§aBy §3@§bShortDevelopment",
+    "name": "TimeLaps Record Resources",
     "uuid": "e930143b-1d70-49f2-b1df-5fb76bb4cdfc",
     "version": [ 1, 0, 0 ],
     "min_engine_version": [ 1, 16, 0 ]

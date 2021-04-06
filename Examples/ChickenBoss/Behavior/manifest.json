@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "§aBy §3@§bShortDevelopment",
+    "name": "Funny Chicken Boss",
+    "uuid": "87156d44-431d-497f-9043-cbc5f397d645",
+    "version": [ 0, 0, 1 ],
+    "min_engine_version": [ 1, 13, 0 ]
+  },
+  "modules": [
+    {
+      "description": "",
+      "type": "data",
+      "uuid": "5d7ad187-0767-400d-abaf-a2c1ffa895e4",
+      "version": [ 0, 0, 1 ]
+    }
+  ]
+}
