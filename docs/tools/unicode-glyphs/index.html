@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>unicode-glyphs</title>
+
+    <style>
+        .mc-button {
+            padding: 12px 32px;
+            font-size: 19.2px !important;
+            transition: .7s cubic-bezier(0,.8,.26,.99);
+            background-color: #34aa2f;
+            -webkit-box-shadow: 0 -4px rgba(21,108,0,.5) inset,0 4px rgba(100,253,31,.99) inset,-4px 0 rgba(100,253,31,.5) inset,4px 0 rgba(21,108,0,.5) inset;
+            box-shadow: inset 0px -4px rgba(21,108,0,0.5), inset 0px 4px rgba(100,253,31,0.99), inset -4px 0px rgba(100,253,31,0.5), inset 4px 0px rgba(21,108,0,0.5);
+            color: #fff;
+            border: none !important;
+            cursor: pointer;
+        }
+
+        .mc-button--big {
+            padding: 22px 52px;
+            font-size: 19.2px !important;
+        }
+
+        .mc-button:hover {
+            box-shadow: inset 0px -4px rgba(0,0,0,0.5), inset 0px 4px rgba(255,255,255,0.2), inset -4px 0px rgba(255,255,255,0.2), inset 4px 0px rgba(0,0,0,0.5);
+            background-color: #313131;
+        }
+
+        .mc-button:focus {
+            outline: 2px solid #4dd2ff;
+        }
+    </style>
+
+    <script>
+
+        function OpenFileButton_Click() {
+            document.querySelector("#file_input").click();
+        }
+
+        /**
+         *
+         * @param {HTMLInputElement} ele
+         * @param event
+         */
+        async function FileUploaded(ele, event) {
+            const file = ele.files[0];
+            try {
+                const startNumber = ExtractHexFormFileName(file.name);
+                console.info(`Start-Number is ${startNumber}`);
+
+                const img = await ReadImageAsync(file);
+                CheckImageSize(img);
+
+                /** @type {HTMLCanvasElement} */
+                const mainCanvas = document.querySelector("#main_canvas");
+                RenderMainImage(mainCanvas, img);
+
+                const resultEle = document.querySelector(".result");
+                resultEle.innerHTML = "";
+
+                let xIndex = 0, yIndex = 0;
+                for (let y = 0; y < 256; y += 16) {
+                    xIndex = 0;
+                    for (let x = 0; x < 256; x += 16) {
+                        const element = document.createElement("div");
+                        element.className = "item";
+
+                        /** @type {HTMLCanvasElement} */
+                        const canvas = document.createElement("canvas")
+                        element.appendChild(canvas);
+                        RenderImageData(canvas, mainCanvas.getContext("2d").getImageData(x, y, 16, 16));
+
+                        const hexCode = startNumber + 16 * yIndex + xIndex;
+                        // console.log(`${hexCode} => ${hexCode.toString(16)}`)
+
+                        const label1 = document.createElement("label");
+                        label1.innerHTML = `0x${hexCode.toString(16)}`;
+                        element.appendChild(label1);
+
+                        const label2 = document.createElement("label");
+                        label2.innerHTML = String.fromCharCode([hexCode]);
+                        element.appendChild(label2);
+
+                        resultEle.appendChild(element);
+
+                        xIndex++;
+                    }
+                    yIndex++;
+                }
+
+            } catch (e) {
+                console.error(e);
+                alert(e);
+            }
+        }
+
+        /**
+         *
+         * @param {string} name
+         * @returns {number}
+         */
+        function ExtractHexFormFileName(name) {
+            // glyph_E1.png
+            if (name.startsWith("glyph_") && name.endsWith(".png")) {
+                return parseInt(`0x${name.replace("glyph_", "").replace(".png", "")}00`);
+            } else {
+                throw new Error("FileName invalid!");
+            }
+        }
+
+        /**
+         *
+         * @param {File} file
+         * @returns {Promise<HTMLImageElement>}
+         */
+        function ReadImageAsync(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.addEventListener("load", (evt) => {
+                    const img = new Image();
+                    img.addEventListener("load", () => {
+                        resolve(img);
+                    });
+                    img.src = evt.target.result;
+                });
+                reader.readAsDataURL(file);
+            });
+        }
+
+        /**
+         *
+         * @param {Image} img
+         */
+        function CheckImageSize(img) {
+            const { width, height } = img;
+            if (width != 256 || height != 256) {
+                throw new Error("Invalid size! Has to be 256x256!");
+            }
+        }
+
+        /**
+         *
+         * @param {HTMLCanvasElement canvas
+         * @param {HTMLImageElement} img
+         * @param {number} size
+         */
+        function RenderMainImage(canvas, img, size = 256) {
+            canvas.width = size;
+            canvas.height = size;
+
+            const context = canvas.getContext("2d");
+
+            context.clearRect(0, 0, size, size);
+            context.drawImage(img, 0, 0);
+        }
+
+        /**
+         *
+         * @param {HTMLCanvasElement} canvas
+         * @param {ImageData} data
+         * @param {number} size
+         */
+        function RenderImageData(canvas, data, size = 16) {
+            canvas.width = size;
+            canvas.height = size;
+
+            const context = canvas.getContext("2d");
+
+            context.clearRect(0, 0, size, size);
+            context.putImageData(data, 0, 0);
+        }
+    </script>
+
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: auto 300px;
+            grid-template-rows: auto 1fr;
+            min-height: 100vh;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .toolbar {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background: #EEEEEE;
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+
+        .canvas_container {
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .canvas_container > canvas {
+                width: 256px;
+                height: 256px;
+                background: #EEEEEE;
+            }
+
+        .result_container {
+            grid-column: 2;
+            grid-row: 2;
+            background: #EEEEEE;
+            height: 100%;
+        }
+
+            .result_container > .result {
+                height: 100%;
+                overflow-y: auto;
+            }
+
+        .item {
+            width: 100%;
+            padding: 10px;
+            display: block;
+            box-sizing: border-box;
+            font-family: Consolas;
+        }
+
+            .item:hover {
+                background: #34aa2f;
+            }
+
+            .item > canvas {
+                width: 16px;
+                height: 16px;
+            }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <button class="mc-button" onclick="OpenFileButton_Click();">Open File</button>
+    </div>
+    <div class="canvas_container">
+        <canvas id="main_canvas"></canvas>
+    </div>
+    <div class="result_container">
+        <div class="result"></div>
+    </div>
+    <input type="file" id="file_input" style="display:none;" accept=".png" onchange="FileUploaded(this, event);" />
+</body>
+</html>
