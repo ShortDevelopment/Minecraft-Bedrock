@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Drill",
+    "description": "§aBy §3@§bShortDevelopment",
+    "uuid": "cb5f651c-4664-4d82-a609-086b3de6daa5",
+    "version": [ 1, 0, 1 ],
+    "min_engine_version": [ 1, 16, 100 ]
+  },
+  "modules": [
+    {
+      "description": "Behavior Pack",
+      "type": "data",
+      "uuid": "f6559208-7540-4a93-9ebc-c902b635b3a7",
+      "version": [ 0, 0, 1 ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "e95e7c96-9f70-4fe6-8da4-72c9b9462bbd",
+      "version": [ 1, 0, 1 ]
+    }
+  ]
+}

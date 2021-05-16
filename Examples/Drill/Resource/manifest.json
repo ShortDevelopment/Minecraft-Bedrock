@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Drill",
+    "description": "§aBy §3@§bShortDevelopment",
+    "uuid": "e95e7c96-9f70-4fe6-8da4-72c9b9462bbd",
+    "version": [ 1, 0, 1 ],
+    "min_engine_version": [ 1, 16, 100 ]
+  },
+  "modules": [
+    {
+      "description": "Resource Pack",
+      "type": "resources",
+      "uuid": "22fffd30-b021-4c28-9552-9f0ceed71c50",
+      "version": [ 0, 0, 1 ]
+    }
+  ]
+}

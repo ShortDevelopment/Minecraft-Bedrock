@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "shortdev:titan_recipe_1"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " o ",
+      "oIo",
+      " o "
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:iron_block"
+      },
+      "o": {
+        "item": "minecraft:obsidian"
+      }
+    },
+    "result": {
+      "item": "shortdev:titan_ingot",
+      "data": 0
+    }
+  }
+}

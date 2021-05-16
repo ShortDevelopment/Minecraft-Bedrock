@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "header": {
+    "name": "§cFlat §aShowCase§r World",
+    "description": "§aBy §3@§bShortDevelopment",
+    "uuid": "a9755992-d75b-44ab-bc07-57c8cff51606",
+    "version": [ 1, 0, 0 ]
+  },
+  "modules": [
+    {
+      "description": "World Template",
+      "type": "world_template",
+      "uuid": "4022dc6f-9cd8-43f8-b55c-de820e8b6a68",
+      "version": [ 1, 0, 0 ]
+    }
+  ]
+}

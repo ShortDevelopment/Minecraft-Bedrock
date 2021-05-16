@@ -1,0 +1,68 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "shortdev:drill",
+      "register_to_creative_menu": true
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "drill",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:block_light_emission": 1.0,
+      "minecraft:on_interact": {
+        "target": "self",
+        "event": "event:interact"
+      },
+      "minecraft:geometry": "geometry.drill",
+      "minecraft:loot": "loot_tables/blocks/drill/broken.json"
+    },
+    "events": {
+
+      "event:interact": {
+        "sequence": [
+          {
+            "trigger": {
+              "event": "event:drill",
+              "target": "self"
+            }
+          },
+          {
+            "trigger": {
+              "event": "event:kill",
+              "target": "self"
+            }
+          }
+        ]
+      },
+
+      "event:drill": {
+        "run_command": {
+          "command": [
+            "tellraw @p {\"rawtext\":[ {\"text\": \"§eBohrung\"} ]}",
+            "fill ~~~ ~~-9~ scaffolding",
+            "fill ~3 ~ ~0 ~-3 ~-9 ~-3 air 0 replace stone",
+            "playsound dig.stone @p ~~~",
+            "playsound dig.stone @p ~~~",
+            "particle minecraft:cauldron_explosion_emitter ~~~"
+          ]
+        }
+      },
+
+      "event:kill": {
+        "spawn_loot": {
+          "table": "loot_tables/blocks/drill/broken.json"
+        },
+        "run_command": {
+          "command": [
+            "tellraw @p {\"rawtext\":[ {\"text\": \"§4Du must den Bohrer reparieren!\"} ]}",
+            "setblock ~~~ air"
+          ]
+        }
+      }
+    }
+  }
+}

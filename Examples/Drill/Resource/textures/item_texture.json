@@ -1,0 +1,12 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "shortdev:drill": {
+      "textures": "textures/items/hopper"
+    },
+    "shortdev:titan_ingot": {
+      "textures": "textures/items/iron_ingot"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "shortdev:troll_tnt"
+    },
+    "components": {
+      "minecraft:on_interact": {
+        "target": "self",
+        "event": "event:explode"
+      },
+      "minecraft:on_player_destroyed": {
+        "target": "self",
+        "event": "event:destroy"
+      }
+    },
+    "events": {
+      "event:destroy": {
+        "run_command": {
+          "command": [
+            "fill ~1 ~1 ~1 ~-1 ~-1 ~-1 shortdev:troll_tnt"
+          ]
+        }
+      },
+      "event:explode": {
+        "run_command": {
+          "command": [
+            "summon tnt ~~~"
+          ]
+        },
+        "set_block": {
+          "block_type": "air"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format_version": [ 1, 1, 0 ],
+  "shortdev:drill": {
+    "textures": "drill",
+    "sound": "metal",
+    "isotropic": true
+  },
+  "niklas:troll_tnt": {
+    "textures": {
+      "up": "tnt_top",
+      "down": "tnt_bottom",
+      "side": "tnt_side"
+    },
+    "sound": "grass"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "TrollTnt",
+    "description": "§aBy §3@§bShortDevelopment",
+    "uuid": "f93ad038-82ea-46c9-8fe9-1d5af99c8e32",
+    "version": [ 1, 0, 1 ],
+    "min_engine_version": [ 1, 16, 100 ]
+  },
+  "modules": [
+    {
+      "description": "Behavior Pack",
+      "type": "data",
+      "uuid": "afdfa92c-beaa-480f-8ea3-7cfe2ab2499f",
+      "version": [ 0, 0, 1 ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "c4c9d861-e339-468d-9215-8d6e737602d0",
+      "version": [ 1, 0, 1 ]
+    }
+  ]
+}

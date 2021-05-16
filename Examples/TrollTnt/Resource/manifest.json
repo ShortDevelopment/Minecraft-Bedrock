@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "TrollTnt",
+    "description": "§aBy §3@§bShortDevelopment",
+    "uuid": "c4c9d861-e339-468d-9215-8d6e737602d0",
+    "version": [ 1, 0, 1 ],
+    "min_engine_version": [ 1, 16, 100 ]
+  },
+  "modules": [
+    {
+      "description": "Resource Pack",
+      "type": "resources",
+      "uuid": "c5fa9fe8-c7e5-4dab-805f-2e38a4f2a09d",
+      "version": [ 0, 0, 1 ]
+    }
+  ]
+}
