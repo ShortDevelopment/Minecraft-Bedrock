@@ -7,4 +7,9 @@ To get startet with server scripting you should have a look at <a href="Scriptin
 CheckNetIsolation LoopbackExempt -a -n="Microsoft.MinecraftUWP_8wekyb3d8bbwe"
 ```
 #### Were are my log files?
+
+##### Current Version
+`%appdata%\logs`
+
+##### Older Versions
 `%appdata%\Minecraft.Server\logs`
